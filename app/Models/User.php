@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function userdetails()
     {
-        return $this->hasOne(UserDetails::class)->where('is_active', 1);
+        return $this->hasOne(UserDetails::class);
     }
 }

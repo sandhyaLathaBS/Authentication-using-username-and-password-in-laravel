@@ -22,9 +22,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function () {
-    Route::get('admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
+    Route::get('home', [AdminController::class, 'adminHome'])->name('admin.home');
+    Route::post('change-status', [AdminController::class, 'userActiveStatus'])->name('update.status');
 });
 
 Route::get('home', [UserController::class, 'index'])->name('home');
 Route::get('profile', [UserController::class, 'profile_updateView'])->name('profile.editView');
 Route::post('profile-action', [UserController::class, 'profile_updateAction'])->name('profile.editAction');
+Route::post('update-file', [UserController::class, 'profile_imageUpdate'])->name('profile.imageupdate');

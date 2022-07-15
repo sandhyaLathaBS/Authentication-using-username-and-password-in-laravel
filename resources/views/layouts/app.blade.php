@@ -19,6 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+    .error {
+        color: red;
+    }
+    </style>
 </head>
 
 <body>
@@ -81,5 +86,6 @@
         </main>
     </div>
 </body>
+@stack('scripts')
 
 </html>
